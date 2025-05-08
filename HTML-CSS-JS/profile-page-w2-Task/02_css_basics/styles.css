@@ -1,0 +1,53 @@
+/* 
+  ================================================
+  FILE: styles.css
+  LESSON: CSS Selectors + Styling — COMMENT-ONLY VERSION
+  ================================================
+
+  🧠 Your task is to write CSS code for each section.
+  Follow the comment instructions and try styling it yourself.
+*/
+
+/* Step 1: Style the <body>
+   - Set a default font
+   - Center the text
+   - Add padding around the content
+   - Set a background color #f0f8ff;
+*/
+
+/* Step 2: Create an element selector for all <p> tags
+   - Change text color
+   - Add a background color
+   - Set padding inside each paragraph
+   - Set font size 
+   - Set margin-bottom
+*/
+
+/* Step 3: Create a class selector (.highlight)
+   - Set a unique color
+   - Set background-color
+   - Add padding
+   - Add rounded corners
+*/
+
+/* Step 4: Create an ID selector (#important)
+   - Make the text white
+   - Set a red background
+   - Use bold font
+   - Add padding 
+   - Add rounded corners
+*/
+
+/* Step 5: Style the <button>
+   - Set padding, 
+   - Set background color
+   - Set text color
+   - Remove the border
+   - Add rounded corners
+   - Change the cursor to a pointer on hover
+   - Set font-size
+*/
+
+/* Step 6: Add a hover effect for the <button>
+   - Use a darker background color when hovered
+*/
