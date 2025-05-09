@@ -17,28 +17,42 @@
 <!-- 3.2 Add <meta name="viewport"> for mobile responsiveness -->
 <!-- 3.3 Add a <title> for the tab title -->
 
-<!-- 3.4 Add a <style> block for internal CSS -->
-<!-- Inside it, define a class called .internal-style and style it -->
-<!-- 3.5 Link an external CSS file using <link rel="stylesheet" href="styles.css"> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>CSS Styling</title>
+    <style>
+      .internal-style {
+        color: rgb(16, 152, 173);
+        font-style: italic;
+      }
+    </style>
+
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <h1>CSS Styling Examples</h1>
+    <p style="color: rgb(220, 163, 116)">
+      This paragraph uses <strong>inline CSS!</strong>
+    </p>
+    <p class="internal-style">
+      this paragraph uses <strong>internal css</strong>
+    </p>
+    <p class="highlight">
+      This paragraph is styled using a <strong>Class Selector</strong>
+    </p>
+    <p id="important">
+      This paragraph is styled using an <strong>ID Selector</strong>
+    </p>
+    <button>Hover Here</button>
+  </body>
 </html>
-
-<!-- Step 4: Inside the <body> -->
-<!-- 4.1 Add a main heading using <h1> -->
-
-<!-- 4.2 Add a paragraph with inline CSS using the style attribute -->
-<!-- Example: Make the text a specific color -->
 
 <!-- 4.3 Add another paragraph and give it the class="internal-style" -->
 
+<!-- ✅ External CSS using different selectors -->
 <!-- 4.4 Add a paragraph for element selector demo -->
 
 <!-- 4.5 Add a paragraph with class="highlight" for class selector demo -->

@@ -14,40 +14,83 @@
    - Add padding around the content
    - Set a background color #f0f8ff;
 */
+body {
+  font-family: arial, sans-serif;
+  text-align: center;
+  padding: 30px;
+  background-color: #f0f8ff;
+}
 
 /* Step 2: Create an element selector for all <p> tags
-   - Change text color
-   - Add a background color
+   - Change text color #d3ac00
+   - Add a background color #e5dfd7
    - Set padding inside each paragraph
    - Set font size 
    - Set margin-bottom
 */
 
+p {
+  color: #d3ac00;
+  background-color: #e5dfd7;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
 /* Step 3: Create a class selector (.highlight)
-   - Set a unique color
+   - Set a unique color #d35400
    - Set background-color
    - Add padding
    - Add rounded corners
 */
 
+.highlight {
+  color: #d35400;
+  background-color: gray;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /* Step 4: Create an ID selector (#important)
    - Make the text white
-   - Set a red background
+   - Set a #c0392b background
    - Use bold font
    - Add padding 
    - Add rounded corners
 */
 
+#important {
+  color: white;
+  background-color: #c0392b;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 /* Step 5: Style the <button>
    - Set padding, 
-   - Set background color
-   - Set text color
+   - Set background color #db9034
+   - Set text color white
    - Remove the border
    - Add rounded corners
    - Change the cursor to a pointer on hover
    - Set font-size
 */
 
+button {
+  padding: 50px 30px;
+  background-color: #db9034;
+  color: white;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #d16d0e;
+  box-shadow: 1px 1px 10px red;
+}
+
 /* Step 6: Add a hover effect for the <button>
-   - Use a darker background color when hovered
+   - Use a darker background color when hovered #d16d0e
 */
