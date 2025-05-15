@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>My Web Page</title>
+  </head>
+  <body>
+    <h1 id="heading">Hello World</h1>
+    <h1>hello second h1</h1>
+    <p class="paragraph">0Welcome to DOM Manipulation!</p>
+    <p class="paragraph">1Welcome to DOM Manipulation!</p>
+    <p class="paragraph">2Welcome to DOM Manipulation!</p>
+    <p class="paragraph">3Welcome to DOM Manipulation!</p>
+    <button>Click me!</button>
+    <script>
+      let clickedCount = 0;
+      document.querySelector("button").addEventListener("click", function () {
+        ++clickedCount;
+        let out;
+        if (clickedCount === 1) {
+          out = "HEY THIS IS PHIL";
+        } else if (clickedCount === 2) {
+          out = "this is Yasin";
+        } else if (clickedCount === 3) {
+          out = "THis is Manny Pacquiao!";
+        } else if (clickedCount === 4) {
+          out = "This is Ann";
+        } else if (clickedCount === 5) {
+          out = "HEY THIS IS DANIEL";
+        } else {
+          out = "NO CONDITION";
+        }
+        document.querySelector("#heading").textContent = out;
+      });
+
+      // const el = document.getElementById("heading");
+      // console.log(el);
+      // el.textContent = "NEW";
+
+      // selected all elements with class of 'paragraph' -> returns HTML Collection()
+      // const ps = document.getElementsByClassName("paragraph");
+      // select elements all elements tag p HTML Collection []
+      const ps = document.querySelectorAll("p"); // 4
+      console.log(ps);
+
+      // for loop [ 0 , 1, 2, 3]
+      for (let i = 0; i < ps.length; i++) {
+        ps[i].style = "color: yellow; background-color: blue";
+        // ps.style.color = "yellow";
+        // ps.style.backgroundColor = "blue";
+      }
+
+      const element = document.getElementById("heading");
+      element.textContent = "0";
+      element.style.color = "red";
+      element.style.backgroundColor = "black";
+      // background-color
+      element.style.textAlign = "center";
+      // text-align
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+#### we can access HTML elements using the `document` object.
+
+- `document.getElementById('id')`
+- `document.getElementsByClassName('class')`
+- `document.getElementsByTagName('tag')`
+- `document.querySelector('ul li')` retrieves only first find
+- `document.querySelectorAll('ul li')` retrieves all finds
+
+### Changing Content:
+
+```javascript
+const element = document.getElementById("myElement");
+element.innerHTML = "New Content";
+```
+
+# Exercise 2:
+
+## 👉 Select the `<h1>` element and change its content to "Hello World from JavaScript!"
+
+### Changing Styles:
+
+```javascript
+const element = document.getElementById("myElement");
+element.style.color = "red";
+element.style.backgroundColor = "black";
+```
+
+# Exercise 3:
+
+## 👉 Select the `<p>` element and change its color to blue and background color to yellow.
+
+## 3️⃣ Event Handling (20 minutes)
+
+### What is an Event?
+
+- An event is an action that occurs on an HTML element.
+
+### Adding Event Listeners:
+
+```javascript
+const button = document.getElementById("myButton");
+button.addEventListener("click", function () {
+  alert("Button Clicked!");
+});
+```
+
+# Exercise 4:
+
+## 👉 Add a click event listener to the button element and change the `<h1>` content to "Button Clicked!" when clicked.
+
+### Handling Multiple Events:
+
+```javascript
+button.addEventListener("mouseover", function () {
+  button.style.backgroundColor = "red";
+});
+-->

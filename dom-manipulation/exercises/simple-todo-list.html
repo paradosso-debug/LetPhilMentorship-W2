@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo list</title>
+  </head>
+  <body>
+    <span>
+      <input type="text" id="todo-input" placeholder="todo list item" />
+      <button id="add-todo-button">add</button>
+    </span>
+    <ul id="todo-list"></ul>
+    <script>
+      const todoInput = document.querySelector("#todo-input");
+      const addTodoButton = document.getElementById("add-todo-button");
+      const todoList = document.getElementById("todo-list");
+
+      function addTodoListItem() {
+        console.log("add todo list item");
+        // check the value of todoInput -> hint todoInput.value
+        // if it is empty i want to see alert check value
+        // then need to createElement li
+        // set createdElement('li') innerText to the value
+        // appendChild to todoList
+      }
+
+      addTodoButton.addEventListener("click", addTodoListItem);
+    </script>
+  </body>
+</html>

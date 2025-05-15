@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #root {
+        display: flex;
+        height: 100vh;
+      }
+
+      .left {
+        flex: 1;
+        border: 1px solid hotpink;
+      }
+
+      .right {
+        flex: 3;
+        border: 1px solid aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      const rootElement = document.getElementById("root");
+      // craete left with createElement
+      const leftDiv = document.createElement("div");
+      // add class left
+      leftDiv.classList.add("left");
+
+      // appended child leftDiv ro rootElement
+      rootElement.appendChild(leftDiv);
+
+      // create right with createElement
+      const rightDiv = document.createElement("div");
+
+      // add clas right
+      rightDiv.classList.add("right");
+
+      // append child
+      rootElement.appendChild(rightDiv);
+
+      function createImage() {
+        // create image tag
+        // const img = document.createElement("img");
+        // // img src attribute
+        // img.src =
+        //   "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/20240226_Kim_Jisoo_%EA%B9%80%EC%A7%80%EC%88%98_02.jpg/640px-20240226_Kim_Jisoo_%EA%B9%80%EC%A7%80%EC%88%98_02.jpg";
+        // // img alt attibute
+        // img.alt = "jisoo image";
+        // // img height attribute
+        // img.height = 100;
+        // // append img
+        // leftDiv.appendChild(img);
+
+        const img = `
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/20240226_Kim_Jisoo_%EA%B9%80%EC%A7%80%EC%88%98_02.jpg/640px-20240226_Kim_Jisoo_%EA%B9%80%EC%A7%80%EC%88%98_02.jpg"
+            alt="jisoo img"
+            height="100px"
+          />
+        `;
+
+        console.log(img);
+
+        leftDiv.innerHTML += img;
+      }
+
+      function createName() {
+        // 1. create text element ( p, h1, ...)
+        // const p = document.createElement("p");
+        // // 2. set text with innerText or innerHTML
+        // p.innerText = "salkdejrtgbksj";
+
+        // p.style.color = "green";
+
+        // // 3. appendChild to leftDiv
+        // leftDiv.appendChild(p);
+
+        const p = (name) => `
+          <p style="color: green">${name}</p>
+        `;
+        leftDiv.innerHTML += p("Colby");
+      }
+
+      function createDescription() {
+        // 1. create text element
+        // const desc = document.createElement("p");
+        // // 2. set text with innerText or innerHTML
+        // desc.innerText = "Hi ,I am Jisoo. Watch me dance.";
+        // // 3. append child to leftDiv
+        // leftDiv.appendChild(desc);
+
+        const desc = (text) => `
+          <p>${text}</p>
+        `;
+        leftDiv.innerHTML += desc("Aspiring software engineer");
+      }
+
+      let leftStep = 0;
+      function createLeftSide() {
+        switch (leftStep) {
+          case 0:
+            console.log("create image");
+            createImage();
+            break;
+          case 1:
+            console.log("put name under to image");
+            createName();
+            break;
+          case 2:
+            console.log("put description under name");
+            createDescription();
+            break;
+          case 3:
+            console.log("finish");
+            break;
+          default:
+            console.log("finish");
+            break;
+        }
+        ++leftStep;
+      }
+
+      leftDiv.addEventListener("click", createLeftSide);
+    </script>
+  </body>
+</html>

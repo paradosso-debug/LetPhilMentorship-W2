@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selecting Elements Exercises</title>
+  </head>
+  <body>
+    <h1>DOM Manipulation: Selecting Elements</h1>
+
+    <div id="container">
+      <p class="text">This is a paragraph with class "text".</p>
+      <p class="text">This is another paragraph with class "text".</p>
+      <p>This is a paragraph without a class.</p>
+      <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
+    </div>
+
+    <script>
+      // Example of selecting elements
+      const container = document.getElementById("container");
+      const paragraphs = document.getElementsByClassName("text");
+      const listItems = document.getElementsByTagName("li");
+
+      console.log(container);
+      console.log(paragraphs);
+      console.log(listItems);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todolist</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="todoInput" placeholder="enter todo" />
+      <button id="add">add</button>
+      <ul id="todoList"></ul>
+    </div>
+    <script>
+      const todoInput = document.getElementById("todoInput");
+      const add = document.getElementById("add");
+      const todoList = document.getElementById("todoList");
+
+      // remove
+      // addEventListener to li
+      // li.addEventListener("click", function() {})
+      // li.remove()
+
+      function addTodo() {
+        const todo = todoInput.value;
+        if (todo === "") return alert("Fill out input please...");
+        const li = document.createElement("li");
+        li.textContent = todo;
+        todoList.appendChild(li);
+      }
+
+      add.addEventListener("click", addTodo);
+    </script>
+  </body>
+</html>

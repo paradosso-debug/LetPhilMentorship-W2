@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text-decoration List App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .container {
+        background: white;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .todo-input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .todo-list {
+        list-style: none;
+        padding: 0;
+      }
+      .todo-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      .todo-item.completed {
+        text-decoration: line-through;
+        color: #888;
+      }
+      .todo-item button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo List</h1>
+      <input type="text" class="todo-input" placeholder="Add a new to-do" />
+      <ul class="todo-list"></ul>
+    </div>
+    <script>
+      document
+        .querySelector(".todo-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            const todoText = e.target.value.trim();
+            if (todoText !== "") {
+              addTodoItem(todoText);
+              e.target.value = "";
+            }
+          }
+        });
+
+      function addTodoItem(text) {
+        const todoList = document.querySelector(".todo-list");
+        const todoItem = document.createElement("li");
+        todoItem.className = "todo-item";
+        todoItem.innerHTML = `
+        <span>${text}</span>
+        <div>
+          <button onclick="toggleComplete(this)">✔️</button>
+          <button onclick="deleteTodoItem(this)">❌</button>
+        </div>
+      `;
+        todoList.appendChild(todoItem);
+      }
+
+      function toggleComplete(button) {
+        const todoItem = button.parentElement.parentElement;
+        todoItem.classList.toggle("completed");
+      }
+
+      function deleteTodoItem(button) {
+        const todoItem = button.parentElement.parentElement;
+        todoItem.remove();
+      }
+    </script>
+  </body>
+</html>
