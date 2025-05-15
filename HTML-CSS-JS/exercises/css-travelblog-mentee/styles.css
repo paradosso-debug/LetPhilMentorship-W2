@@ -17,3 +17,53 @@
 /* Task 9: Use an ID selector for #special-note to give the section blue italic text */
 
 /* Task 10: Add a hover effect to the button that changes its background to light blue */
+body {
+  background-color: lightgrey;
+  font-family: arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: darkblue;
+}
+
+main {
+  padding: 20px;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: lightgreen;
+}
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+footer {
+  justify-content: center;
+  margin: 0 auto;
+  width: 60%;
+  background-color: aqua;
+  background-image: url("https://www.televisionacademy.com/files/assets_r/containers/assets/Archives/steve-buscemi-450x600.jpg/159ec4ef7f464a199f384adfa2a84204/steve-buscemi-450x600.jpg");
+
+  text-align: center;
+  padding: 10px;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+section {
+  border: 5px solid blue;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+#special-note {
+  font-style: italic;
+  color: rgb(167, 49, 203);
+}
+
+button:hover {
+  background-color: lightblue;
+}

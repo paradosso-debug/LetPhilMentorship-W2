@@ -1,3 +1,40 @@
+let myName = "Sam";
+
+console.log(myName);
+
+let myAge = 26;
+
+console.log(myAge);
+
+let likesChocolate = true;
+
+console.log(likesChocolate);
+
+let hobbies = ["drawing", "gaming", "cooking"];
+console.log(hobbies);
+
+let profile = {
+  name: "Joe",
+  age: 20,
+};
+console.log(profile);
+
+function getMyName(myName) {
+  return myName;
+}
+console.log(getMyName("Juno"));
+
+const getLastName = (lastName) => {
+  return lastName;
+};
+console.log(getLastName("Smith"));
+
+function squareNumber(num) {
+  return num * num;
+}
+
+console.log(squareNumber(4));
+
 // Task 1: Declare a variable named 'myName' and assign it your name as a string (e.g., "Sam")
 
 // Task 2: Declare a variable named 'myAge' and assign it your age as a number (e.g., 25)
