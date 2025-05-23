@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Selector</title>
+  </head>
+  <body>
+    hello hello
+    <button onclick="setTheme('light')">Light Mode</button>
+    <button onclick="setTheme('dark')">Dark Mode</button>
+    <script>
+      function setTheme(theme) {
+        localStorage.setItem("theme", theme);
+        if (theme === "light") {
+          document.body.style.background = "#fff";
+          document.body.style.color = "#000";
+        } else {
+          document.body.style.background = "#333";
+          document.body.style.color = "#fff";
+        }
+
+        // approved ? age < 21 ? "user cannot order drinks" : "user is good" : age > 21 ? "user" : "user"
+
+        // document.body.style.background = theme === "dark" ? "#333" : "#fff";
+        // document.body.style.color = theme === "dark" ? "#fff" : "#000";
+      }
+
+      window.onload = function () {
+        // Load theme on page load
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+          setTheme(savedTheme);
+        }
+      };
+    </script>
+  </body>
+</html>

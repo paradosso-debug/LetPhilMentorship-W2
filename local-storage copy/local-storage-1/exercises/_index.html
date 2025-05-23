@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LocalStorage Exercises</title>
+  </head>
+  <body>
+    <h1>LocalStorage Exercises</h1>
+    <form id="storageForm">
+      <label for="key">Key:</label>
+      <input type="text" id="key" name="key" required />
+      <br />
+      <label for="value">Value:</label>
+      <input type="text" id="value" name="value" required />
+      <br />
+      <button type="submit">Save to LocalStorage</button>
+    </form>
+    <button id="retrieveBtn">Retrieve from LocalStorage</button>
+    <button id="clearBtn">Clear LocalStorage</button>
+    <div id="output"></div>
+
+    <script>
+      document
+        .getElementById("storageForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const key = document.getElementById("key").value;
+          const value = document.getElementById("value").value;
+          localStorage.setItem(key, value);
+          alert("Data saved to LocalStorage");
+        });
+
+      document
+        .getElementById("retrieveBtn")
+        .addEventListener("click", function () {
+          const key = document.getElementById("key").value;
+          const value = localStorage.getItem(key);
+          document.getElementById("output").innerText = value
+            ? `Value: ${value}`
+            : "No data found";
+        });
+
+      document
+        .getElementById("clearBtn")
+        .addEventListener("click", function () {
+          localStorage.clear();
+          alert("LocalStorage cleared");
+        });
+    </script>
+  </body>
+</html>

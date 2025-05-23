@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo list</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      .container div {
+        /* border: 1px solid black; */
+        width: 400px;
+      }
+
+      .list-item {
+        width: 400px;
+        border: 1px solid black;
+      }
+
+      .list-item span {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3px;
+      }
+
+      .list-item p {
+        flex: 5;
+      }
+
+      .list-item button {
+        height: 20px;
+        width: 100px;
+      }
+
+      .action-buttons {
+        flex: 1;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>todo lists</h1>
+        <input type="text" id="taskInput" placeholder="Enter Task" />
+        <button id="addButton">add</button>
+      </div>
+      <div>
+        <ul id="todoList"></ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    /**
+     * todoItem ->
+     * {
+     *    createdAt: new Date()
+     *    updatedAt: new Date()
+     *    task: string
+     *    weight: 1 - 4
+     * }
+     * */
+
+    let todos = [];
+
+    window.onload = renderList;
+
+    function Todo(task, weight = 1) {
+      this.task = task;
+      this.weight = weight;
+      this.createdAt = new Date();
+      this.updatedAt = new Date();
+    }
+
+    // add to do function
+    function addTodo() {
+      const todo = new Todo(taskInput.value);
+      todos.push(todo);
+      console.log("todos =", todos);
+      localStorage.setItem("todos", JSON.stringify(todos));
+      renderList();
+    }
+
+    function renderListItem(todoItem) {
+      const li = document.createElement("li");
+      li.classList.add("list-item");
+      const span = document.createElement("span");
+
+      const p = document.createElement("p");
+      p.innerText = todoItem.task;
+
+      // p.style.textDecoration = "line-through";
+      span.appendChild(p);
+
+      const div = document.createElement("div");
+
+      div.classList.add("action-buttons");
+
+      const completeButton = document.createElement("button");
+      completeButton.innerText = "complete";
+
+      div.appendChild(completeButton);
+
+      const removeButton = document.createElement("button");
+      removeButton.innerText = "remove";
+
+      div.appendChild(removeButton);
+
+      const editButton = document.createElement("button");
+      editButton.innerText = "edit";
+
+      div.appendChild(editButton);
+
+      span.appendChild(div);
+
+      li.appendChild(span);
+      return li;
+    }
+
+    // function renderList
+    function renderList() {
+      const getTodos = localStorage.getItem("todos");
+      if (getTodos) todos = JSON.parse(getTodos);
+      todoList.innerHTML = "";
+      for (let i = 0; i < todos.length; i++) {
+        const current = todos[i];
+        const listItem = renderListItem(current);
+        todoList.appendChild(listItem);
+      }
+    }
+
+    addButton.addEventListener("click", addTodo);
+  </script>
+</html>
+
+<!-- 
+ [] needs input -> needs to add todo on enter
+ [] needs button to add
+
+ [] needs list to add list item
+ [] remove
+
+-->
+
+<!-- when compelte is pressed add textDecoration line-through -->
+<!-- when remove is pressed shoudl remoe from list and localStorage -->
+<!-- when edit is pressed task shoudl be able to be edited -->
+<!-- need to turn p tag into input and be able to save at index of task -->

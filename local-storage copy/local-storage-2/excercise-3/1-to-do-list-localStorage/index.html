@@ -1,0 +1,27 @@
+<!-- Unordered list where tasks will appear -->
+<ul id="taskList"></ul>
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+<html lang="en">
+  <!-- Sets the language of the document to English -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Defines character encoding as UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Makes the page look good on all screen sizes -->
+    <title>To-Do List</title>
+    <!-- Title of the page shown in the browser tab -->
+  </head>
+  <body>
+    <!-- Input field where the user will type a new task -->
+    <input id="task" type="text" placeholder="Enter new task..." />
+
+    <!-- Button that will call the addTask() function when clicked -->
+    <button onclick="addTask()">Add Task +</button>
+    <!-- Unordered list where the tasks will appear -->
+    <ul id="taskList"></ul>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+  </body>
+</html>

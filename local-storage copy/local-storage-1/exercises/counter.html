@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/ce5aa52415.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <style>
+      .container {
+        padding: 20px;
+      }
+
+      #header {
+        font-size: 20px;
+        color: aqua;
+      }
+
+      .container span {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid black;
+        justify-content: center;
+      }
+
+      .container span button {
+        width: 100px;
+        font-size: 30px;
+      }
+
+      .container span p {
+        font-size: 30px;
+        width: 300px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- div that's a container -->
+    <div class="container">
+      <h1 id="header"></h1>
+      <span>
+        <button id="minusButton">-</button>
+        <p id="display">0</p>
+        <button id="plusButton">+</button>
+      </span>
+      <input id="countSelect" type="number" value="1" />
+      <button id="changeTheme"><i class="fa-solid"></i></button>
+    </div>
+
+    <script>
+      // minusOrPlus -> string + | -
+      let storedNumber;
+      const lightModeIcon = "fa-sun";
+      const darkModeIcon = "fa-moon";
+      const themeButtonIcon = document.querySelector("#changeTheme i");
+
+      const STORAGE_KEYS = Object.freeze({
+        COUNTER_NUMBER: "countNumber",
+        USERNAME: "username",
+        THEME: "theme",
+      });
+
+      function changeThemeMode(mode) {
+        if (mode === "light-mode") {
+          // change site to dark mode)
+          themeButtonIcon.classList.remove(darkModeIcon);
+          themeButtonIcon.classList.add(lightModeIcon);
+          document.body.style.backgroundColor = "#333";
+          document.body.style.color = "#fff";
+          localStorage.setItem("theme", "dark-mode");
+          // set localStorage.setItem
+        } else {
+          // change site to light mode
+          themeButtonIcon.classList.remove(lightModeIcon);
+          themeButtonIcon.classList.add(darkModeIcon);
+          document.body.style.backgroundColor = "#fff";
+          document.body.style.color = "#000";
+          localStorage.setItem("theme", "light-mode");
+        }
+      }
+
+      window.onload = function () {
+        // try to get localStorage key 'counterNumber' if not there it would return null
+        // if left side is falsy value it will use right value
+        storedNumber = localStorage.getItem(STORAGE_KEYS.COUNTER_NUMBER) || 0;
+        storedUsername =
+          localStorage.getItem(STORAGE_KEYS.USERNAME) || "anonymous";
+        header.innerText = "HELLO " + storedUsername;
+        storedTheme = localStorage.getItem(STORAGE_KEYS.THEME) || "light-mode";
+        display.innerText = storedNumber || 0;
+
+        changeThemeMode(
+          storedTheme === "light-mode" ? "dark-mode" : "light-mode"
+        );
+      };
+
+      changeTheme.addEventListener("click", function () {
+        const current = localStorage.getItem(STORAGE_KEYS.THEME);
+        console.log("current =", current);
+        changeThemeMode(current);
+      });
+
+      function counter(minusOrPlus) {
+        if (minusOrPlus === "+") {
+          display.innerText =
+            Number(display.innerText) + Number(countSelect.value);
+        } else {
+          display.innerText =
+            Number(display.innerText) - Number(countSelect.value);
+        }
+
+        localStorage.setItem("counterNumber", Number(display.innerText));
+      }
+
+      minusButton.addEventListener("click", function () {
+        counter("-");
+      });
+
+      plusButton.addEventListener("click", function () {
+        counter("+");
+      });
+    </script>
+  </body>
+</html>
