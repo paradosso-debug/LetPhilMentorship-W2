@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Persistence</title>
+  </head>
+  <body>
+    <input type="text" id="nameInput" placeholder="Enter name" />
+    <input type="email" id="emailInput" placeholder="Enter email" />
+    <button onclick="saveData()">Save</button>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+      // function saveData() {
+      //   const name = document.getElementById("name").value;
+      //   const email = document.getElementById("email").value;
+      //   localStorage.setItem("formData", JSON.stringify({ name, email }));
+      // }
+
+      nameInput.onkeyup = function () {
+        localStorage.setItem("name", nameInput.value);
+        console.log(nameInput.value);
+      };
+
+      emailInput.onkeyup = function () {
+        localStorage.setItem("email", emailInput.value);
+      };
+
+      function loadData() {
+        // const storedData = JSON.parse(localStorage.getItem("formData"));
+        // if (storedData) {
+        document.getElementById("nameInput").value =
+          localStorage.getItem("name");
+        document.getElementById("emailInput").value =
+          localStorage.getItem("email");
+        // }
+      }
+
+      loadData();
+    </script>
+  </body>
+</html>

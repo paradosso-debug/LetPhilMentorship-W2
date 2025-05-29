@@ -1,0 +1,43 @@
+/* Reset margin and padding for all elements, include padding inside the width/height */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* The main layout container for the whole app */
+.container {
+  display: flex; /* Flexbox layout */
+  flex-direction: column; /* Stack elements vertically */
+}
+
+/* Container that holds the input and button */
+.input-container {
+  justify-content: center; /* Center horizontally */
+  display: flex; /* Place input and button side by side */
+  margin: 20px;
+}
+
+/* Styles for the text input */
+.input-container input {
+  height: 34px;
+  width: 200px;
+  font-size: 18px;
+}
+
+/* Styles for the add button */
+.input-container button {
+  margin-left: 10px; /* Space between input and button */
+  width: 100px;
+  border-radius: 7px; /* Rounded corners */
+}
+
+/* Styles for each todo list item */
+.list-item {
+  border: 1px solid black;
+  display: flex; /* Flex layout for text and buttons */
+  justify-content: space-between; /* Spread content left and right */
+  align-items: center; /* Center items vertically */
+  padding: 0 20px; /* Add padding inside the item */
+  margin: 10px 20px; /* Spacing between tasks */
+}

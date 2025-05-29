@@ -1,0 +1,20 @@
+/* Set the font for the whole body */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Styling for the main todo container */
+.todo-container {
+  max-width: 400px; /* Makes the container no wider than 400px */
+  margin: 0 auto; /* Centers it horizontally */
+  padding: 20px; /* Adds space inside the box */
+  border: 1px solid #ccc; /* Light gray border around the box */
+  border-radius: 5px; /* Rounds the corners slightly */
+}
+
+/* Style each todo item line */
+.todo-item {
+  display: flex; /* Allows items inside to be side-by-side */
+  justify-content: space-between; /* Pushes items to left and right ends */
+  margin-bottom: 10px; /* Adds space between each todo item */
+}

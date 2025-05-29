@@ -1,0 +1,35 @@
+/* Apply a basic font and center the content */
+body {
+  font-family: Arial, sans-serif;
+  display: flex; /* Use flexbox to center everything */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh; /* Full height of the viewport */
+  background-color: #f4f4f4; /* Light background color */
+}
+
+/* Style all input fields */
+input {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the Save button */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

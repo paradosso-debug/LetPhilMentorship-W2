@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <button>store in localstorage</button>
+      <button>get from localstorage</button>
+      <button>view all in localstorage</button>
+      <button>remove from local storage</button>
+      <button>clear localstroage</button>
+      <div id="output"></div>
+    </div>
+    <script>
+      class CustomStorage {
+        constructor(localStorageInstance) {
+          this.storage = localStorageInstance;
+        }
+
+        // method to set item in local storage can take stringify any value
+        set(key, val) {
+          return this.storage.setItem(key, JSON.stringify(val));
+        }
+
+        get(key) {
+          try {
+            const stored = this.storage.getItem(key);
+            if (!stored) throw new Error("NOT FOUND");
+            if (stored[0] === "{" || stored[0] === "[")
+              return JSON.parse(stored);
+            else return stored;
+          } catch (e) {
+            return e;
+          }
+        }
+
+        getAll() {
+          const vals = [];
+          // const vals = new Map();
+
+          const size = this.numberOfKeys();
+          for (let i = 0; i < size; i++) {
+            // vals.set(localStorage.key(i), this.get(localStorage.key(i)));
+
+            const obj = {
+              key: localStorage.key(i),
+              val: this.get(localStorage.key(i)),
+            };
+
+            vals.push(obj);
+          }
+          return vals;
+
+          // return this.storage.key();
+        }
+
+        erase(key) {
+          return this.storage.removeItem(key);
+        }
+
+        numberOfKeys() {
+          return this.storage.length;
+        }
+      }
+
+      const customStorage = new CustomStorage(localStorage);
+
+      /**
+       * theres a built in variable in js called 'localStorage'
+       * there are methods on there
+       * setItem
+       * getItem
+       * clear
+       * removeItem
+       *
+       * example use -> localStorage.setItem
+       *
+       * */
+
+      output.innerHTML = `<pre>${JSON.stringify(localStorage, null, 2)}</pre>`;
+
+      // set item in localstorage key: "A" , value: "testset"
+      const [setButton, getButton, viewAllButton, removeButton, clearButton] =
+        document.querySelectorAll("button");
+
+      setButton.addEventListener("click", function () {
+        customStorage.set("C", { a: "b", c: "d" });
+        output.innerHTML = `<pre>${JSON.stringify(
+          localStorage,
+          null,
+          2
+        )}</pre>`;
+      });
+
+      getButton.addEventListener("click", function () {
+        // const stored = localStorage.getItem("A");
+        const stored = customStorage.get("D");
+        console.log("stored =", stored);
+      });
+
+      removeButton.addEventListener("click", function () {
+        customStorage.erase("user");
+        output.innerHTML = `<pre>${JSON.stringify(
+          localStorage,
+          null,
+          2
+        )}</pre>`;
+      });
+
+      viewAllButton.addEventListener("click", function () {
+        const all = customStorage.getAll();
+        console.log(all);
+      });
+
+      clearButton.addEventListener("click", function () {
+        localStorage.clear();
+        output.innerHTML = `<pre>${JSON.stringify(
+          localStorage,
+          null,
+          2
+        )}</pre>`;
+      });
+    </script>
+  </body>
+</html>

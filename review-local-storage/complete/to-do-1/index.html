@@ -1,0 +1,39 @@
+<!-- This tells the browser that we are using HTML5 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- This sets the character encoding so that special characters display correctly -->
+    <meta charset="UTF-8" />
+    <!-- This makes the website responsive for different screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- This is the title of the page shown in the browser tab -->
+    <title>Todo List with LocalStorage</title>
+
+    <!-- Linking our external CSS file for styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Main container for the todo app -->
+    <div class="todo-container">
+      <!-- Page title -->
+      <h2>Todo List</h2>
+
+      <!-- Input field where the user types a todo item -->
+      <input type="text" id="todo-input" placeholder="Enter a new todo" />
+
+      <!-- Button to trigger the addTodo() function when clicked -->
+      <button onclick="addTodo()">Add</button>
+
+      <!-- This unordered list will display the todo items -->
+      <ul id="todo-list"></ul>
+
+      <!-- Button to clear all todos from the list and from LocalStorage -->
+      <button onclick="clearTodos()">Clear All</button>
+    </div>
+
+    <!-- Linking the JavaScript logic at the bottom so HTML loads first -->
+    <script src="script.js"></script>
+  </body>
+</html>
