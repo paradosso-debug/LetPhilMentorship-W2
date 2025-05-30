@@ -64,7 +64,6 @@ function deleteTask(index) {
 
   displayTasks();
 }
-
 displayTasks();
 
 // ✅ Function that runs when the user clicks "Add Task"
