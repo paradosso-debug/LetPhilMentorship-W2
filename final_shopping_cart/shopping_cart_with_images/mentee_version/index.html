@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="items-ui">
+        <h1 style="margin-bottom: 10px">Shopping Cart</h1>
+        <div class="input-container">
+          <input id="productName" type="text" placeholder="name" />
+          <input id="productPrice" type="number" placeholder="price" />
+          <input id="productImage" type="text" placeholder="image url" />
+          <button id="addButton">+</button>
+          <button id="clearButton">Clear</button>
+        </div>
+        <div id="listContainer"></div>
+        <p id="totalDisplay" style="margin-top: 10px; font-size: 20px"></p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
