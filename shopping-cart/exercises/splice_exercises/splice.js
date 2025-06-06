@@ -64,6 +64,7 @@ console.log(drinks);
 // STEP 1: Create an array of programming languages
 // STEP 2: Use splice to add "HTML" at the beginning
 // STEP 3: Log the updated array
+
 let langs = ["Python", "JavaScript", "C++"];
 langs.splice(0, 0, "HTML");
 console.log(langs);
