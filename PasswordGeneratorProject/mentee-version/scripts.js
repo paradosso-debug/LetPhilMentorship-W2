@@ -1,10 +1,4 @@
 // Step 1: Create a constant object named 'characters' with 4 string properties: lower, upper, numbers, and symbols.
-const characters = {
-  lower: "abcdefghijklmnopqrstuvwxyz",
-  upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  numbers: "0123456789",
-  symbols: "!@#$%^&*()_+=-{};',.<>?",
-};
 
 // Step 2: Wait for the HTML content to load using DOMContentLoaded event
 // Step 3: When the "Generate" button is clicked, start building the password
@@ -25,6 +19,19 @@ const characters = {
 // Step 9: When "Clear History" is clicked, wipe localStorage and clear the UI list
 
 // Step 10: Load history when the page loads
+
+// Step 11: Function to generate a password based on options
+
+// Step 12: Save the password in localStorage, keeping only the 5 most recent entries
+
+// Step 13: Display the saved passwords from localStorage as <li> elements inside <ul id="history">
+const characters = {
+  lower: "abcdefghijklmnopqrstuvwxyz",
+  upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  numbers: "0123456789",
+  symbols: "!@#$%^&*()_+=-{};',.<>?",
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("generate").addEventListener("click", () => {
     let length = parseInt(document.getElementById("length").value);
@@ -96,9 +103,3 @@ function loadPasswordHistory() {
     history.appendChild(li);
   });
 }
-
-// Step 11: Function to generate a password based on options
-
-// Step 12: Save the password in localStorage, keeping only the 5 most recent entries
-
-// Step 13: Display the saved passwords from localStorage as <li> elements inside <ul id="history">
