@@ -122,6 +122,13 @@ displayProduct(product);
 const city = {
   name: "Chicago",
   state: "Illinois",
+  population: 1000000,
+  climate: "Windy",
+  religion: "no clue",
+  food: "pizza",
+  drink: "bubbl'r",
+  animal: "honey badger",
+
 };
 
-document.body.innerText = `name: ${city.name}\nstate: ${city.state}`;
+document.body.innerText = `name: ${city.name}\nstate: ${city.state} population: ${city.population}`;
